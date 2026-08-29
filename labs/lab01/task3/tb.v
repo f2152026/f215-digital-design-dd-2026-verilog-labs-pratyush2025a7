@@ -29,8 +29,8 @@ module tb;
     #20 $finish;
   end
 
-  // This string format eliminates the variable spacing gap and matches the grader line-for-line
+  // Restored to your original template formatting
   initial
-    $monitor("%20d a=%b b=%b cin=%b | sum=%b cout=%b", $time, t_a, t_b, t_cin, t_sum, t_cout);
+    $monitor($time, " a=%b b=%b cin=%b | sum=%b cout=%b", t_a, t_b, t_cin, t_sum, t_cout);
 
 endmodule

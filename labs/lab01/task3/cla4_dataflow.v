@@ -1,5 +1,3 @@
-// cla4_dataflow.v
-// 4-bit Carry Lookahead Adder using dataflow modeling
 module cla4_dataflow(
   input  [3:0] a,
   input  [3:0] b,
@@ -21,7 +19,7 @@ module cla4_dataflow(
   assign #(2,3) c3 = g[2] | (p[2] & g[1]) | (p[2] & p[1] & g[0]) | (p[2] & p[1] & p[0] & cin);
   assign #(2,3) cout = g[3] | (p[3] & g[2]) | (p[3] & p[2] & g[1]) | (p[3] & p[2] & p[1] & g[0]) | (p[3] & p[2] & p[1] & p[0] & cin);
 
-  // 3. Combined Vector Sum assignment (Fixes the syntax error!)
+  // 3. Combined Vector Sum assignment to avoid compiler syntax bugs
   assign #(2,3) sum = p ^ {c3, c2, c1, cin};
 
 endmodule
