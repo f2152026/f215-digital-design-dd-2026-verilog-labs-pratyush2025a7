@@ -1,5 +1,5 @@
 // FA_Gate.v
-// Gate-level model of a 1-bit full adder
+// Gate-level model of a 1-bit full adder, now with explicit gate delays.
 
 module FA_Gate(
   input  a,

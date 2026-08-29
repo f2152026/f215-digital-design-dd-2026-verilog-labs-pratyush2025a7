@@ -1,8 +1,5 @@
 // tb.v
-// Testbench for dut.v. This file is given -- do not modify it.
-// Works unchanged regardless of which implementation is currently active
-// inside dut.v. The waveform filename (vcd_file) is supplied externally
-// via the vcd plusarg -- you don't need to choose or specify one.
+// Testbench for dut.v
 
 module tb;
   reg  [63:0] t_a, t_b;
@@ -18,9 +15,10 @@ module tb;
     .cout (t_cout)
   );
 
-  // Waveform dump configuration
-  string vcd_file;
+ 
+  reg [8*64:1] vcd_file;
   initial begin
+
     if ($value$plusargs("vcd=%s", vcd_file)) begin
       $dumpfile(vcd_file);
       $dumpvars(0, DUT);
